@@ -1,5 +1,34 @@
-package com.xetosphere.soulseeker.graphic;
+package com.xetosphere.titanproject.graphic;
 
 public class Screen {
+
+	private int width, height;
+
+	public int[] pixels;
+
+	public Screen(int width, int height) {
+
+		this.width = width;
+		this.height = height;
+		pixels = new int[width * height];
+	}
+
+	public void render() {
+
+		for (int y = 0; y < height; y++) {
+			if (y >= height || y < 0) break;
+			for (int x = 0; x < width; x++) {
+				if (x >= width || x < 0) break;
+				pixels[x + y * width] = 0x000000;
+			}
+		}
+	}
+	
+	public void clear() {
+		
+		for (int i = 0; i < pixels.length; i++) {
+			pixels[i] = 0;
+		}
+	}
 
 }
