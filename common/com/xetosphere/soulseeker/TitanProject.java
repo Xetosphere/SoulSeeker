@@ -15,9 +15,9 @@ public class TitanProject extends Canvas implements Runnable {
 
 	private static final long serialVersionUID = 1L;
 
-	public static int height = 90;
-	public static int width = 160;
-	public static int scale = 4;
+	public static int height = 180;
+	public static int width = 320;
+	public static int scale = 2;
 	public static String title = "The Titan Project";
 
 	private Thread thread;
@@ -99,8 +99,12 @@ public class TitanProject extends Canvas implements Runnable {
 		stop();
 	}
 
+	int x = 0, y = 0;
+	
 	public void update() {
-
+		
+		x++;
+		//y++;
 	}
 
 	public void render() {
@@ -113,7 +117,7 @@ public class TitanProject extends Canvas implements Runnable {
 
 		screen.clear();
 
-		screen.render();
+		screen.render(x, y);
 
 		for (int i = 0; i < pixels.length; i++) {
 
